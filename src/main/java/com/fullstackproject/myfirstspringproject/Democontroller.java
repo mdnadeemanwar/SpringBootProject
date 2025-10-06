@@ -2,7 +2,9 @@ package com.fullstackproject.myfirstspringproject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class Democontroller {
 
     //define a private filed for depedency
@@ -14,6 +16,11 @@ public class Democontroller {
     @Autowired
     public Democontroller(Coach theCoach){
         myCoach=theCoach;
+    }
+
+    @GetMapping("/")
+    public String home(){
+        return "This is our First page";
     }
 
     //create a getmapping endpoint for api
