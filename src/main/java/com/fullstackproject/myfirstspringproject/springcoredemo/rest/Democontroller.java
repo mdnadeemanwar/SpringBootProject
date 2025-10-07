@@ -3,10 +3,12 @@ package com.fullstackproject.myfirstspringproject.springcoredemo.rest;
 import com.fullstackproject.myfirstspringproject.springcoredemo.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Primary
 public class Democontroller {
 
     //define a private filed for depedency
@@ -16,7 +18,7 @@ public class Democontroller {
     //define a constructor for dependency injection
 
     @Autowired
-    public Democontroller(@Qualifier("tenniscoach") Coach theCoach){
+    public Democontroller( Coach theCoach){
         myCoach=theCoach;
     }
 
