@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 @Primary
 public class Baseballcoach implements Coach{
 
+    public Baseballcoach(){
+        System.out.println("BaseBall Coash---------"+getClass().getName());
+    }
+
     @Override
     public String getDailyWorkout(){
         return "Run 10km daily for baseball!!!";
