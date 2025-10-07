@@ -1,4 +1,4 @@
-package com.fullstackproject.myfirstspringproject;
+package com.fullstackproject.myfirstspringproject.springcoredemo.common;
 
 import org.springframework.stereotype.Component;
 

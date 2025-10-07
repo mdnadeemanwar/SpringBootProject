@@ -1,5 +1,6 @@
-package com.fullstackproject.myfirstspringproject;
+package com.fullstackproject.myfirstspringproject.springcoredemo.rest;
 
+import com.fullstackproject.myfirstspringproject.springcoredemo.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +10,7 @@ public class Democontroller {
 
     //define a private filed for depedency
 
-    private  Coach myCoach;
+    private Coach myCoach;
 
     //define a constructor for dependency injection
 
