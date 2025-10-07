@@ -3,6 +3,7 @@ package com.fullstackproject.myfirstspringproject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//component scanning
 @SpringBootApplication
 public class MyfirstspringprojectApplication {
 
