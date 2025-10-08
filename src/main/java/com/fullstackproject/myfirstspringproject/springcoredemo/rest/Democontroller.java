@@ -1,6 +1,8 @@
 package com.fullstackproject.myfirstspringproject.springcoredemo.rest;
 
 import com.fullstackproject.myfirstspringproject.springcoredemo.common.Coach;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
@@ -13,16 +15,20 @@ public class Democontroller {
     //define a private filed for depedency
 
     private Coach myCoach;
-    private Coach anotherCoach;
+
 
     //define a constructor for dependency injection
 
     @Autowired
-    public Democontroller( @Qualifier("cricketcoach") Coach theCoach,
-                           @Qualifier("cricketcoach") Coach theanotherCoach){
+    public Democontroller( @Qualifier("swincoach") Coach theCoach){
+        System.out.println("First constructor");
         myCoach=theCoach;
-        anotherCoach = theanotherCoach;
     }
+
+    //define the constructor for the init and destroy
+
+    //define the init method
+
 
     @GetMapping("/")
     public String home(){
@@ -36,10 +42,7 @@ public class Democontroller {
     }
 
 
-    @GetMapping("/check")
-    public String check(){
-        return "comparing the the beancoach"+(myCoach==anotherCoach);
-    }
+
 
 
 }
