@@ -22,18 +22,14 @@ public class MyfirstspringprojectApplication {
     public CommandLineRunner commandLineRunner(StudentDao studentDao){
         return runner->{
 //            createStudent(studentDao);
-
-//            createMultipleStudent(studentDao);
-
+              createMultipleStudent(studentDao);
 //            readStudent(studentDao);
 //            findAllStudent(studentDao);
-
 //            findByLastName(studentDao);
-            update(studentDao);
+//            update(studentDao);
+//            delete(studentDao);
+//            deleteAll(studentDao);
         };
-
-
-
     }
 
     public void createStudent(StudentDao studentDao){
@@ -108,9 +104,29 @@ public class MyfirstspringprojectApplication {
         int studnetId = 1;
 
         Student mystudent = studentDao.findByID(studnetId);
-        mystudent.setFirstName("UpdateNameNadeem");
+        //change firstname to john
+        mystudent.setFirstName("John");
         studentDao.update(mystudent);
         System.out.println("The updated name is "+mystudent);
+    }
+
+    public void delete(StudentDao studentDao){
+        int studentId = 5;
+
+        System.out.println("Deleting the student id"+studentId);
+
+        studentDao.delete(studentId);
+
+
+    }
+
+    public void deleteAll(StudentDao studentDao){
+
+        System.out.println("Deleting all student");
+
+        int noOfRowDeleted = studentDao.deleteAll();
+
+        System.out.println("No of row delete"+noOfRowDeleted);
     }
 
 }
