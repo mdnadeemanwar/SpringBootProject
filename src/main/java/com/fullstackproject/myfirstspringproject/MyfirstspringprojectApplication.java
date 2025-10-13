@@ -120,6 +120,7 @@ public class MyfirstspringprojectApplication {
 
     }
 
+
     public void deleteAll(StudentDao studentDao){
 
         System.out.println("Deleting all student");
